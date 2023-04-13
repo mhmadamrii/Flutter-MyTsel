@@ -8,6 +8,7 @@ This project is a starting point for a Flutter application.
 
 ## Image
 - ![alt text]('lib/assets/readme-assets/splash.png')
+- ![alt text]('lib/assets/facebook.png')
 - ![alt text]('lib/assets/readme-assets/auth.png')
 
 A few resources to get you started if this is your first Flutter project:
