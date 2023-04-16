@@ -39,11 +39,13 @@ class _AuthState extends State<Auth> {
               ),
 
               // text offer login
-              const Text("Silahkan masuk dengan nomor telkomsel kamu",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  )),
+              const Text(
+                "Silahkan masuk dengan nomor telkomsel kamu",
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               const SizedBox(
                 height: 20,
               ),
@@ -126,6 +128,7 @@ class _AuthState extends State<Auth> {
                               color: Color(
                                 0xFFEC2028,
                               ),
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                           const TextSpan(
@@ -134,6 +137,7 @@ class _AuthState extends State<Auth> {
                               color: Color(
                                 0xFFEC2028,
                               ),
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                           const TextSpan(
@@ -149,10 +153,10 @@ class _AuthState extends State<Auth> {
                               },
                             text: "privasi ",
                             style: const TextStyle(
-                              color: Color(
-                                0xFFEC2028,
-                              ),
-                            ),
+                                color: Color(
+                                  0xFFEC2028,
+                                ),
+                                fontWeight: FontWeight.bold),
                           ),
                           const TextSpan(
                             text: "Telkomsel",
@@ -174,7 +178,9 @@ class _AuthState extends State<Auth> {
               Container(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: isChecked ? () => print('certain function') : null,
+                  onPressed: isChecked
+                      ? () => Navigator.pushNamed(context, '/second-authentication')
+                      : null,
                   style: ElevatedButton.styleFrom(
                     fixedSize: const Size.fromHeight(50),
                     backgroundColor: isChecked

@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:mtsel/screens/authentication_screen.dart';
+import 'package:mtsel/screens/dashboard_screen.dart';
+import 'package:mtsel/screens/second_authentication.dart';
 
 void main() => runApp(const MyApp());
 
@@ -15,6 +17,8 @@ class MyApp extends StatelessWidget {
       home: const SplashScreen(),
       routes: {
         '/main': (_) => const Auth(),
+        '/dashboard': (_) => const Dashboard(),
+        '/second-authentication': (_) => const SecondAuthentication()
       },
     );
   }
