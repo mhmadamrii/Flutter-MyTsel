@@ -104,43 +104,40 @@ class _SecondAuthenticationState extends State<SecondAuthentication> {
               ),
 
               // don't receive the code we send?
-              Expanded(
-                child: RichText(
-                  text: TextSpan(
-                    text: "Tidak menerima SMS?  ",
-                    style: const TextStyle(
-                      color: Colors.black,
-                    ),
-                    children: [
-                      TextSpan(
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            print("Kirim ulang");
-                          },
-                        text: "kirim ulang",
-                        style: const TextStyle(
-                          color: Colors.red,
-                        ),
-                      ),
-                    ],
+              RichText(
+                text: TextSpan(
+                  text: "Tidak menerima SMS?  ",
+                  style: const TextStyle(
+                    color: Colors.black,
                   ),
+                  children: [
+                    TextSpan(
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          print("Kirim ulang");
+                        },
+                      text: "kirim ulang",
+                      style: const TextStyle(
+                        color: Colors.red,
+                      ),
+                    ),
+                  ],
                 ),
+              ),
+              const SizedBox(
+                height: 20,
               ),
 
               // button login
               Container(
                 width: double.infinity,
-                // decoration: BoxDecoration(
-                //   border: Border.all(
-                //     width: 1,
-                //   ),
-                // ),
                 child: ElevatedButton(
                   onPressed: () => Navigator.pushNamed(
                     context,
                     '/dashboard',
                   ),
                   style: ElevatedButton.styleFrom(
+                    fixedSize: const Size.fromHeight(50),
                     backgroundColor: const Color(0xFFEC2028),
                   ),
                   child: const Text(
