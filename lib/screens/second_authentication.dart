@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class SecondAuthentication extends StatefulWidget {
@@ -13,16 +14,6 @@ class _SecondAuthenticationState extends State<SecondAuthentication> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () => Navigator.of(context).pop(),
-          icon: const Icon(
-            Icons.arrow_back_ios_new,
-            color: Colors.grey,
-          ),
-        ),
-      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(
@@ -32,6 +23,17 @@ class _SecondAuthenticationState extends State<SecondAuthentication> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // appbar custom
+              InkWell(
+                onTap: () => Navigator.of(context).pop(),
+                child: const Icon(
+                  Icons.arrow_back_ios_new,
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+
               // verivication image
               Container(
                 child: Image.asset(
@@ -104,19 +106,45 @@ class _SecondAuthenticationState extends State<SecondAuthentication> {
               // don't receive the code we send?
               Expanded(
                 child: RichText(
-                  text: const TextSpan(
+                  text: TextSpan(
                     text: "Tidak menerima SMS?  ",
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.black,
                     ),
                     children: [
                       TextSpan(
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            print("Kirim ulang");
+                          },
                         text: "kirim ulang",
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.red,
                         ),
                       ),
                     ],
+                  ),
+                ),
+              ),
+
+              // button login
+              Container(
+                width: double.infinity,
+                // decoration: BoxDecoration(
+                //   border: Border.all(
+                //     width: 1,
+                //   ),
+                // ),
+                child: ElevatedButton(
+                  onPressed: () => Navigator.pushNamed(
+                    context,
+                    '/dashboard',
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFFEC2028),
+                  ),
+                  child: const Text(
+                    "MASUK",
                   ),
                 ),
               )

@@ -179,7 +179,8 @@ class _AuthState extends State<Auth> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: isChecked
-                      ? () => Navigator.pushNamed(context, '/second-authentication')
+                      ? () =>
+                          Navigator.pushNamed(context, '/second-authentication')
                       : null,
                   style: ElevatedButton.styleFrom(
                     fixedSize: const Size.fromHeight(50),
